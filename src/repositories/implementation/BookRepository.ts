@@ -25,4 +25,12 @@ export class BookRepository implements IBookRepository{
 
         return data
     }
+    async updateById(data: BookEntity): Promise<void> {
+        await ClientPrisma.books.update({where:{id:data.id},data:data})
+    }
+    async searchByTitle(title: string): Promise<Books[]> {
+        const data = await ClientPrisma.books.findMany({where:{title:{contains:title}}})
+
+        return data
+    }
 }

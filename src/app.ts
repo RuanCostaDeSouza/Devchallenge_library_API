@@ -6,7 +6,7 @@ const app = Express();
 
 app.use(Express.json());
 app.use(Express.urlencoded({extended:true}));
-app.use(cors)
+app.use(cors())
 app.use(Routes)
 
 

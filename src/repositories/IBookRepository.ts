@@ -7,4 +7,6 @@ export interface IBookRepository{
     findById(id:string):Promise<BookEntity>;
     deleteById(id:string):Promise<any>;
     findByTitle(title:string):Promise<BookEntity>;
+    searchByTitle(title:string):Promise<Books[]>;
+    updateById(data:BookEntity):Promise<void>;
 }
